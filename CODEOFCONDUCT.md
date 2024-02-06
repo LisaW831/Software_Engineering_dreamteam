@@ -1,9 +1,9 @@
-CODE OF CONDUCT
+<u>**CODE OF CONDUCT**</u>
 
-**• Punctuality is crucial; please notify in advance if unable to attend lectures or meetings.
+**• Punctuality is crucial;** please notify in advance if unable to attend lectures or meetings.
 
-• Each team member is expected to actively contribute weekly, such as participating in stand-ups and presenting evidence of task progress.
+• **Each team member is expected to actively contribute weekly**, such as participating in stand-ups and presenting evidence of task progress.
 
-• Don't hesitate to seek assistance, ask questions, and voice any confusion or concerns.
+• **Do not hesitate to seek assistance**, ask questions, and voice any confusion or concerns.
 
-• Respectful listening is essential, refrain from interrupting others during discussions.**
+• **Respectful listening is essential**, refrain from interrupting others during discussions.**
