@@ -1,8 +1,4 @@
 # Software_Engineering_dreamteam
 Software Engineering Coursework
-TEST CI Workflow
-TEST Commit for CI Workflow
-TEST Again NEW
-TEST Again NEW_01
-TEST Again again
-yet again
+![workflow](https://github.com/LisaW831/Software_Engineering_dreamteam
+/actions/workflows/main.yml/badge.svg)
