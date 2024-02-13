@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-As a Locations Advisor I want to produce a report on all cities in the world organised from largest population to smallest so that I can support operational and strategic decision making for the organisation.
+As a Locations Advisor I want to produce a report on all countries in the world organised from largest population to smallest so that I can support operational and strategic decision making for the organisation.
 
 ### Scope
 
@@ -32,13 +32,13 @@ Locations Advisor.
 
 ### Trigger
 
-A request for population data for cities in the world is sent to the locations team.
+A request for population data for countries in the world is sent to the locations team.
 
 ## MAIN SUCCESS SCENARIO
 
-1. Planning request city population information for informed decision making.
+1. Planning request country population information for informed decision making.
 2. Locations advisor captures exact parameters of the data required.
-3. Locations advisor extracts population of all cities in the world and organises it from largest population to smallest.
+3. Locations advisor extracts population of all countries in the world and organises it from largest population to smallest.
 4. Locations advisor provides report to planning.
 
 ## EXTENSIONS
