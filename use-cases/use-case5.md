@@ -36,7 +36,7 @@ A request for population data for capital cities in the world is sent to the loc
 
 ## MAIN SUCCESS SCENARIO
 
-1. Planning request capital city population information for informed decision making.
+1. Planning request capital city population information for informed decision making..
 2. Locations advisor captures exact parameters of the data required.
 3. Locations advisor extracts population of all cities in the world and organises it from largest population to smallest.
 4. Locations advisor provides report to planning.
