@@ -1,0 +1,18 @@
+@startuml
+
+actor LA as "Location Advisor"
+
+rectangle Database
+
+rectangle "LA Database" {
+    usecase UC4 as "Get population information
+    based on user requirements"
+
+    usecase UCa as "Provide detailed report"
+
+    LA - UC4
+    UC4 ..> UCa : include requirements
+    UC4 - Database
+}
+
+@enduml
