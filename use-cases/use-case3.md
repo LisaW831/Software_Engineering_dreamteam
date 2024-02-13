@@ -1,4 +1,4 @@
-# USE CASE: 3 Produce Reports on cities in specified cateogries. All organised from largest population to smallest
+# USE CASE: 3 Produce Reports on cities in specified categories. All organised from largest population to smallest
 
 ## CHARACTERISTIC INFORMATION
 
