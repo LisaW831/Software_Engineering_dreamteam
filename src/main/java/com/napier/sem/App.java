@@ -2,6 +2,7 @@ package com.napier.sem;
 
 import java.sql.*;
 
+
 public class App {
     public static void main(String[] args) {
         App a = new App();
@@ -13,6 +14,24 @@ public class App {
         }
         con = App.con;
 
+        retrieveCountriesByPopulation(con);
+    }
+
+    public static void retrieveCountriesByPopulation(Connection con) {
+        try {
+            String sql = "SELECT Name, Population FROM country ORDER BY Population DESC";
+            Statement statement = con.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            System.out.println("Countries sorted by population (highest to lowest):");
+            while (resultSet.next()) {
+                String countryName = resultSet.getString("Name");
+                int population = resultSet.getInt("Population");
+                System.out.println(countryName + " - Population: " + population);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
     static Connection con = null;
@@ -55,28 +74,34 @@ public class App {
         }
     }
 
-    public world getCountriesByPopulation() {
-        try {
-// Create the SQL statement
-            Statement stmt = con.createStatement();
-// Turn it into a string and add in the query.
-            String strSelect =
-                    "SELECT Name, Population "
-                            + "FROM country "
-                            + "ORDER BY Population DESC"; // Ordering by population in descending order
-// Run the SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
-// Print countries organized by population
-            System.out.println("Countries by Population:");
-            while (rset.next()) {
-                String countryName = rset.getString("Name");
-                int population = rset.getInt("Population");
-                System.out.println(countryName + ": " + population);
+        // Method to establish database connection
+        public Connection connect() {
+            Connection con = null;
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                String url = "jdbc:mysql://localhost:33060/world?allowPublicKeyRetrieval=true&useSSL=false";
+                con = DriverManager.getConnection(url, "root", "example");
+                System.out.println("Connected to the database.");
+            } catch (ClassNotFoundException e) {
+                System.out.println("Could not load SQL driver: " + e.getMessage());
+            } catch (SQLException e) {
+                System.out.println("Failed to connect to the database: " + e.getMessage());
             }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get country details");
-            return null;
+            return con;
+        }
+
+
+
+        // Method to disconnect from the database
+        public void disconnect(Connection con) {
+            try {
+                if (con != null) {
+                    con.close();
+                    System.out.println("Disconnected from the database.");
+                }
+            } catch (SQLException e) {
+                System.out.println("Failed to disconnect from the database: " + e.getMessage());
+            }
         }
     }
-}
+
