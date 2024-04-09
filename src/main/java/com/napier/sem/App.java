@@ -2,10 +2,8 @@ package com.napier.sem;
 
 import java.sql.*;
 
-public class App
-{
-    public static void main(String[] args)
-    {
+public class App {
+    public static void main(String[] args) {
         App a = new App();
         System.out.println("going in to connect");
         if (args.length < 1) {
@@ -18,6 +16,7 @@ public class App
     }
 
     static Connection con = null;
+
     public void connect(String location, int delay) {
         try {
             // Load Database driver
@@ -53,6 +52,31 @@ public class App
             } catch (InterruptedException ie) {
                 System.out.println("Thread interrupted? Should not happen.");
             }
+        }
+    }
+
+    public world getCountriesByPopulation() {
+        try {
+// Create the SQL statement
+            Statement stmt = con.createStatement();
+// Turn it into a string and add in the query.
+            String strSelect =
+                    "SELECT Name, Population "
+                            + "FROM country "
+                            + "ORDER BY Population DESC"; // Ordering by population in descending order
+// Run the SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+// Print countries organized by population
+            System.out.println("Countries by Population:");
+            while (rset.next()) {
+                String countryName = rset.getString("Name");
+                int population = rset.getInt("Population");
+                System.out.println(countryName + ": " + population);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
         }
     }
 }
