@@ -23,7 +23,7 @@ public class Report_8 {
         String chosenContinent = scanner.nextLine(); // Get user input for continent choice
 
         // Call method to display capital cities of the chosen continent
-        displayCapitalsOfContinent(con, chosenContinent);
+        displayCitiesOfContinent(con, chosenContinent);
 
         // Close scanner and database connection
         scanner.close();
@@ -48,7 +48,7 @@ public class Report_8 {
     }
 
     // Method to display cities of a continent by population
-    public static void displayCapitalsOfContinent(Connection con, String continent) {
+    public static void displayCitiesOfContinent(Connection con, String continent) {
         try {
             String sql = "SELECT city.name AS city_name, country.name AS country_name, city.population " +
                     "FROM city " +
