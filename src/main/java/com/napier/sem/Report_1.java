@@ -1,49 +1,41 @@
-/*package com.napier.sem;
+package com.napier.sem;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
+import java.sql.*;
 
-//All the countries in the world organised by largest population to smallest.
 public class Report_1 {
+    static Connection con = null;
 
-    public static class CountriesByPopulation {
 
-        private String name;
-        private int population;
-
-        public CountriesByPopulation(String name, int population) {
-            this.name = name;
-            this.population = population;
-
+    public static void main(String[] args) {
+        App a = new App();
+        System.out.println("going in to connect"); // Indicates the start of the connection process
+        if (args.length < 1) {
+            a.connect("localhost:33060", 10000); // Connects to localhost if no arguments provided
+        } else {
+            a.connect(args[0], Integer.parseInt(args[1])); // Connects to the specified location and port
         }
+        con = App.con;
 
-        // toString method to represent the object as a string
-        public String toString() {
-            return name +
-                    population;
-        }
+        Report_1.retrieveCountriesByPopulation(con); // Calls a method to retrieve countries by population
     }
 
-    // Method to retrieve country data for the report
-    public static void 2retrieveCountriesByPopulation(Connection con) {
+    // Method to retrieve countries sorted by population
+    public static void retrieveCountriesByPopulation(Connection con) {
         try {
-            String sql = "SELECT Name, Population FROM world.country ORDER BY Population DESC";
+            String sql = "SELECT Name, Population FROM country ORDER BY Population DESC"; // SQL query to retrieve countries sorted by population
             Statement statement = con.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
 
-            System.out.println("Countries sorted by population (highest to lowest):");
+            System.out.println("Countries sorted by population (highest to lowest):"); // Indicates the start of the output
             while (resultSet.next()) {
                 String countryName = resultSet.getString("Name");
                 int population = resultSet.getInt("Population");
-                System.out.println(countryName + " - Population: " + population);
+                System.out.println(countryName + " - Population: " + population); // Prints country name and population
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            ex.printStackTrace(); // Prints stack trace if SQL exception occurs
         }
     }
+
 }
 
-*/
