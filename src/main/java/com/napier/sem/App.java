@@ -2,10 +2,9 @@ package com.napier.sem;
 
 import java.sql.*;
 
-public class App
-{
-    public static void main(String[] args)
-    {
+
+public class App {
+    public static void main(String[] args) {
         App a = new App();
         System.out.println("going in to connect");
         if (args.length < 1) {
@@ -15,9 +14,28 @@ public class App
         }
         con = App.con;
 
+        retrieveCountriesByPopulation(con);
+    }
+
+    public static void retrieveCountriesByPopulation(Connection con) {
+        try {
+            String sql = "SELECT Name, Population FROM country ORDER BY Population DESC";
+            Statement statement = con.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            System.out.println("Countries sorted by population (highest to lowest):");
+            while (resultSet.next()) {
+                String countryName = resultSet.getString("Name");
+                int population = resultSet.getInt("Population");
+                System.out.println(countryName + " - Population: " + population);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
     static Connection con = null;
+
     public void connect(String location, int delay) {
         try {
             // Load Database driver
@@ -55,4 +73,35 @@ public class App
             }
         }
     }
-}
+
+        // Method to establish database connection
+        public Connection connect() {
+            Connection con = null;
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                String url = "jdbc:mysql://localhost:33060/world?allowPublicKeyRetrieval=true&useSSL=false";
+                con = DriverManager.getConnection(url, "root", "example");
+                System.out.println("Connected to the database.");
+            } catch (ClassNotFoundException e) {
+                System.out.println("Could not load SQL driver: " + e.getMessage());
+            } catch (SQLException e) {
+                System.out.println("Failed to connect to the database: " + e.getMessage());
+            }
+            return con;
+        }
+
+
+
+        // Method to disconnect from the database
+        public void disconnect(Connection con) {
+            try {
+                if (con != null) {
+                    con.close();
+                    System.out.println("Disconnected from the database.");
+                }
+            } catch (SQLException e) {
+                System.out.println("Failed to disconnect from the database: " + e.getMessage());
+            }
+        }
+    }
+
