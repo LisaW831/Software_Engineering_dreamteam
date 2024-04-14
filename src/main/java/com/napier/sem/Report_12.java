@@ -1,7 +1,7 @@
 package com.napier.sem;
 
 import java.sql.*;
-import java.util.Scanner; //Need this to get input from the user
+import java.util.Scanner;
 
 public class Report_12 {
     static Connection con = null;
