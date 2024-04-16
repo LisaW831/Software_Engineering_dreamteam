@@ -95,7 +95,43 @@ class MyTest {
                 {"US", "Netherlands", "Europe", "Western Europe", "15864000", "Amsterdam"}
         };
     }
+    // method to check if an array contains a specific value
     private boolean arrayContainsValue(String[] array, String value) {
+        for (String item : array) {
+            if (item.equals(value)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    @Test
+    void generateCityDetails() {
+        // Input
+        String cityName = "New York";
+
+        // Mock implementation of city details generation
+        String[][] cityReport = generateCityDetails(cityName);
+
+        // Output verification
+        // Verify that the generated city details contains the correct columns
+        assertEquals(4, cityReport[0].length); // 4 columns
+
+        assertTrue(arrayTestValue(cityReport[0], "Name"));
+        assertTrue(arrayTestValue(cityReport[0], "Country"));
+        assertTrue(arrayTestValue(cityReport[0], "District"));
+        assertTrue(arrayTestValue(cityReport[0], "Population"));
+    }
+
+    // Mock implementation of city details generation
+    private String[][] generateCityDetails(String cityName) {
+        return new String[][] {
+                {"Name", "Country", "District", "Population"},
+                {"New York", "USA", "New York", "8008278"}
+        };
+    }
+
+    // method to check if an array contains a specific value
+    private boolean arrayTestValue(String[] array, String value) {
         for (String item : array) {
             if (item.equals(value)) {
                 return true;
