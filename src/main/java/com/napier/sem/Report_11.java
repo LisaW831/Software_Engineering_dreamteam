@@ -3,6 +3,8 @@ package com.napier.sem;
 import java.sql.*;
 import java.util.Scanner;
 
+// Class defined to create the report to query: All the cities in a district organised by largest population to smallest
+
 public class Report_11 {
     static Connection con = null;
 
