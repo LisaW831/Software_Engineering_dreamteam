@@ -2,6 +2,7 @@ package com.napier.sem;
 
 import java.sql.*;
 import java.util.Scanner;
+
 public class Report_11 {
     static Connection con = null;
 
@@ -39,32 +40,32 @@ public class Report_11 {
 
             System.out.println("Available Districts:");
             while (resultSet.next()) {
-                String districts = resultSet.getString("District");
-                System.out.println(districts); // Print each available District
+                String district = resultSet.getString("District");
+                System.out.println(district); // Print each available District
             }
         } catch (SQLException ex) {
             ex.printStackTrace(); // Print stack trace if SQL exception occurs
         }
     }
 
-    // Method to display cities of a country
-    public static void displayCitiesOfDistrict(Connection con, String country) {
+    // Method to display cities of a district
+    public static void displayCitiesOfDistrict(Connection con, String district) {
         try {
             String sql = "SELECT city.name AS city_name, city.district AS district_name, city.population " +
                     "FROM city " +
                     "JOIN country ON city.countrycode = country.code " +
-                    "WHERE country.Name = ? " +
+                    "WHERE city.district = ? " +
                     "ORDER BY city.population DESC";
             PreparedStatement preparedStatement = con.prepareStatement(sql);
-            preparedStatement.setString(1, District);
+            preparedStatement.setString(1, district);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            System.out.println("Cities in " + District + " ordered by population (highest to lowest):");
+            System.out.println("Cities in " + district + " ordered by population (highest to lowest):");
             while (resultSet.next()) {
                 String cityName = resultSet.getString("city_name");
-                String DistrictName = resultSet.getString("district_name");
+                String districtName = resultSet.getString("district_name");
                 int population = resultSet.getInt("population");
-                System.out.println(cityName + ", " + DistrictName + " - Population: " + population); // Print city name, district name, and population
+                System.out.println(cityName + ", " + districtName + " - Population: " + population); // Print city name, district name, and population
             }
         } catch (SQLException ex) {
             ex.printStackTrace(); // Print stack trace if SQL exception occurs

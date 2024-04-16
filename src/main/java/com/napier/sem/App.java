@@ -20,7 +20,7 @@ public class App {
             setLayout(new FlowLayout()); // Set layout to FlowLayout
 
             // List of classes
-            String[] classNames = {"Report 1", "Report 2", "Report 3", "Report 17", "Report 18", "Report 19"};
+            String[] classNames = {"Report 1", "Report 2", "Report 3", "Report 4", "Report 5", "Report 6", "Report 7", "Report 8", "Report 9", "Report 10", "Report 11", "Report 12", "Report 12", "Report 14", "Report 15", "Report 16", "Report 17", "Report 18", "Report 19", "Report 20", "Report 21", "Report 22", "Languages"};
             classList = new JComboBox<>(classNames); // Create JComboBox with class names
             add(classList); // Add JComboBox to the window
 
@@ -48,6 +48,45 @@ public class App {
                     case "Report 3":
                         Report_3.main(new String[]{}); // Run Report 3
                         break;
+                    case "Report 4":
+                        Report_4.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 5":
+                        Report_5.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 6":
+                        Report_6.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 7":
+                        Report_7.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 8":
+                        Report_8.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 9":
+                        Report_9.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 10":
+                        Report_10.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 11":
+                        Report_11.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 12":
+                        Report_12.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 13":
+                        Report_13.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 14":
+                        Report_14.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 15":
+                        Report_15.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 16":
+                        Report_16.main(new String[]{}); // Run Report 1
+                        break;
                     case "Report 17":
                         Report_17.main(new String[]{}); // Run Report 3
                         break;
@@ -56,6 +95,18 @@ public class App {
                         break;
                     case "Report 19":
                         Report_19.main(new String[]{}); // Run Report 3
+                        break;
+                    case "Report 20":
+                        Report_20.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 21":
+                        Report_21.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 22":
+                        Report_22.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Languages":
+                        LanguageReport.main(new String[]{}); // Run Report 1
                         break;
 
                     default:
