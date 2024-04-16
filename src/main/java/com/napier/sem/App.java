@@ -20,7 +20,7 @@ public class App {
             setLayout(new FlowLayout()); // Set layout to FlowLayout
 
             // List of classes
-            String[] classNames = {"Report 1", "Report 2", "Report 3", "Report 4", "Report 5", "Report 6", "Report 7", "Report 8", "Report 9", "Report 10", "Report 11", "Report 12", "Report 12", "Report 14", "Report 15", "Report 16", "Report 17", "Report 18", "Report 19", "Report 20", "Report 21", "Report 22", "Languages"};
+            String[] classNames = {"Report 1", "Report 2", "Report 3", "Report 4", "Report 5", "Report 6", "Report 7", "Report 8", "Report 9", "Report 10", "Report 11", "Report 12", "Report 12", "Report 14", "Report 15", "Report 16", "Report 17", "Report 18", "Report 19", "Report 20", "Report 21", "Report 22", "Report 23", "Report 24", "Report 25", "Overall Population", "Languages"};
             classList = new JComboBox<>(classNames); // Create JComboBox with class names
             add(classList); // Add JComboBox to the window
 
@@ -104,6 +104,18 @@ public class App {
                         break;
                     case "Report 22":
                         Report_22.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 23":
+                        Report_23.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 24":
+                        Report_24.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Report 25":
+                        Report_25.main(new String[]{}); // Run Report 1
+                        break;
+                    case "Overall Population":
+                        OverallPopulation.main(new String[]{}); // Run Report 1
                         break;
                     case "Languages":
                         LanguageReport.main(new String[]{}); // Run Report 1
