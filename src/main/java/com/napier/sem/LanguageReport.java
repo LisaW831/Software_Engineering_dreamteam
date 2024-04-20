@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-// Class defined to create the report to query: a report to provide the number of people who speak the following the following languages from greatest number to smallest, including the percentage of the world population:, Chinese, English, Hindi, Spanish, Arabic.
+/** Class defined to create the report to query: a report to provide the number of people who speak the following the following languages from greatest number to smallest, including the percentage of the world population:, Chinese, English, Hindi, Spanish, Arabic. */
 public class LanguageReport {
     static Connection con = null;
 

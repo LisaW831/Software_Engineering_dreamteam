@@ -2,8 +2,9 @@ package com.napier.sem;
 
 import java.sql.*;
 import java.util.Scanner;
+import java.util.concurrent.*;
 
-// Class defined to create the report to query: All the countries in a region organised by largest population to smallest
+/** Class defined to create the report to query: All the countries in a region organised by largest population to smallest */
 public class Report_3 {
     static Connection con = null;
 
@@ -21,15 +22,25 @@ public class Report_3 {
 
         displayAvailableRegions(con); // Display available regions to the user
 
-        System.out.println("Enter the name of the region you want to explore:");
-        String chosenRegion = scanner.nextLine(); // Get user input for region choice
+        // Create a thread to handle user input
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Future<String> future = executor.submit(() -> {
+            System.out.println("Enter the name of the region you want to explore:");
+            return scanner.nextLine(); // Get user input for region choice
+        });
 
-        // Call method to display countries of the chosen region ordered by population
-        displayCountriesOfRegionByPopulation(con, chosenRegion);
-
-        // Close scanner and database connection
-        scanner.close();
-        a.disconnect(con);
+        // Wait for the user input within 10 seconds
+        try {
+            String chosenRegion = future.get(10, TimeUnit.SECONDS);
+            displayCountriesOfRegionByPopulation(con, chosenRegion); // Call method to display countries of the chosen region ordered by population
+        } catch (InterruptedException | ExecutionException | TimeoutException ex) {
+            System.out.println("Input timed out. Exiting...");
+        } finally {
+            // Close scanner and database connection
+            scanner.close();
+            a.disconnect(con);
+            executor.shutdownNow();
+        }
     }
 
     // Method to display available regions from the database
@@ -68,4 +79,3 @@ public class Report_3 {
         }
     }
 }
-

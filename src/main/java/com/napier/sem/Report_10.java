@@ -2,8 +2,9 @@ package com.napier.sem;
 
 import java.sql.*;
 import java.util.Scanner;
+import java.util.concurrent.*;
 
-// Class defined to create the report to query: All the cities in a country organised by largest population to smallest
+/** Class defined to create the report to query: All the cities in a country organised by largest population to smallest*/
 public class Report_10 {
     static Connection con = null;
 
@@ -21,8 +22,7 @@ public class Report_10 {
 
         displayAvailableCountries(con); // Display available countries to the user
 
-        System.out.println("Enter the name of the country you want to explore:");
-        String chosenCountry = scanner.nextLine(); // Get user input for country choice
+        String chosenCountry = waitForInput(scanner, "Enter the name of the country you want to explore:", 10);
 
         // Call method to display cities of the chosen country
         displayCitiesOfCountry(con, chosenCountry);
@@ -71,5 +71,26 @@ public class Report_10 {
         } catch (SQLException ex) {
             ex.printStackTrace(); // Print stack trace if SQL exception occurs
         }
+    }
+
+    // Method to wait for user input within a specified time limit
+    public static String waitForInput(Scanner scanner, String prompt, int timeoutSeconds) {
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Future<String> future = executor.submit(() -> {
+            System.out.println(prompt);
+            return scanner.nextLine();
+        });
+
+        try {
+            return future.get(timeoutSeconds, TimeUnit.SECONDS);
+        } catch (InterruptedException | ExecutionException | TimeoutException ex) {
+            System.out.println("Input timed out. Exiting...");
+            System.exit(0); // Exit the program if input times out
+        } finally {
+            executor.shutdownNow();
+        }
+
+        // This line is unreachable but added to satisfy the compiler
+        return null;
     }
 }

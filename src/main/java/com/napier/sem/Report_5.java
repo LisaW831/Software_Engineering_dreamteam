@@ -2,8 +2,9 @@ package com.napier.sem;
 
 import java.sql.*;
 import java.util.Scanner;
+import java.util.concurrent.*;
 
-// Class defined to create the report to query: The top N populated countries in a continent where N is provided by the user
+/** Class defined to create the report to query: The top N populated countries in a continent where N is provided by the user*/
 public class Report_5 {
     static Connection con = null;
 
@@ -33,7 +34,26 @@ public class Report_5 {
             }
         }
 
-        Report_5.retrieveCountriesByContinentPopulation(con, continentName, numberOfCountries); // Calls a method to retrieve countries by region population
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Future<String> future = executor.submit(() -> {
+            System.out.println("Enter the number of populated countries in a continent to display: ");
+            return scanner.nextLine();
+        });
+
+        try {
+            String continentInput = future.get(10, TimeUnit.SECONDS);
+            numberOfCountries = Integer.parseInt(continentInput);
+        } catch (InterruptedException | ExecutionException | TimeoutException ex) {
+            System.out.println("Input timed out. Using default value for number of countries.");
+        } finally {
+            executor.shutdownNow();
+        }
+
+        retrieveCountriesByContinentPopulation(con, continentName, numberOfCountries); // Calls a method to retrieve countries by region population
+
+        // Close scanner and database connection
+        scanner.close();
+        a.disconnect(con);
     }
 
     // Method to check if the continent exists in the country table
