@@ -1,4 +1,11 @@
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -10,21 +17,21 @@ class MyTest {
 
     @Test
     void unitTest3()
-            // illustrates how we can add a message to a test
+    // illustrates how we can add a message to a test
     {
         assertEquals(5, 5, "Messages are equal");
     }
 
     @Test
     void unitTest4()
-            // illustrates how to test floating point values with an error range
+    // illustrates how to test floating point values with an error range
     {
         assertEquals(5.0, 5.01, 0.02);
     }
 
     @Test
     void unitTest5()
-            // illustrates how to compare array contents in a test
+    // illustrates how to compare array contents in a test
     {
         int[] a = {1, 2, 3};
         int[] b = {1, 2, 3};
@@ -33,7 +40,7 @@ class MyTest {
 
     @Test
     void unitTest6()
-            // illustrates how to test if a value is true
+    // illustrates how to test if a value is true
     {
         assertTrue(5 == 5);
     }
@@ -47,21 +54,21 @@ class MyTest {
 
     @Test
     void unitTest8()
-            // illustrates how to test if a value is null
+    // illustrates how to test if a value is null
     {
         assertNull(null);
     }
 
     @Test
     void unitTest9()
-            // illustrates how to test if a value is not null
+    // illustrates how to test if a value is not null
     {
         assertNotNull("Hello");
     }
 
     @Test
     void unitTest10()
-            // illustrates how to test if a method throws an exception
+    // illustrates how to test if a method throws an exception
     {
         assertThrows(NullPointerException.class, this::throwsException);
     }

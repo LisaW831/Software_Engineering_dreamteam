@@ -56,7 +56,7 @@ public class DatabaseUnitTest {
         resultSet.close();
     }
 
-
+/** This test adds some data to the database to make sure it can, then deletes it so the test can be ran multple times */
     @Test
     void testTransactionCommit() {
         try {

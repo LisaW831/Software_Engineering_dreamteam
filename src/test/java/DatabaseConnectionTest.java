@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/** This is an integration test to test the connection and disconnection to the db */
 public class DatabaseConnectionTest {
     private Connection connection;
     private static final String LOCATION = "localhost:33060";

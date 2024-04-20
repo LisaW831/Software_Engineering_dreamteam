@@ -17,7 +17,7 @@ public class TestCountriesList {
     private static final String PASSWORD = "example";
 
     private List<String> countryList;
-/** This tests if France, Japan and Australia exists in the countries list */
+/** This tests if  United Kingdom, France, Japan and Australia exists in the countries list */
     @BeforeEach
     void setUp() {
         countryList = new ArrayList<>();
@@ -30,7 +30,7 @@ public class TestCountriesList {
                 countryList.add(countryName);
             }
 
-            // Add three more countries to the list
+            // This checks for more than one Country
             countryList.add("France");
             countryList.add("Japan");
             countryList.add("Australia");
@@ -41,7 +41,7 @@ public class TestCountriesList {
 
     @Test
     void testCountryListNotEmpty() {
-        // Ensure the country list is not empty
+        // This makes sure the list is not empty
         assert !countryList.isEmpty();
     }
 

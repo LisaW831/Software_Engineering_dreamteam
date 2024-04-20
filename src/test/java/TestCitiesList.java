@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.fail;
-/** This tests if Paris, Tokyo and Sydney exists in the cities list **/
+/** This tests if London, Paris, Tokyo and Sydney exists in the cities list **/
 public class TestCitiesList {
     private static final String JDBC_URL = "jdbc:mysql://localhost:33060/world";
     private static final String USERNAME = "root";

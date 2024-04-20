@@ -38,7 +38,7 @@ public class TestDistrictList {
             fail("Failed to retrieve district list: " + e.getMessage());
         }
     }
-
+/** This tests that the district list contains Central Java, New York, Tokyo and Sydney */
     @Test
     void testDistrictListNotEmpty() {
         // Ensure the district list is not empty

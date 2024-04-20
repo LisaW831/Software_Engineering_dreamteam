@@ -14,7 +14,7 @@ public class DatabaseContentTest {
     private static final String JDBC_URL = "jdbc:mysql://localhost:33060/world";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "example";
-
+/** This tests if the country table returns any rows of data */
     @Test
     void testCountryTableContents() {
         try (Connection connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
@@ -26,7 +26,7 @@ public class DatabaseContentTest {
             fail("Failed to execute query: " + e.getMessage());
         }
     }
-
+/** This tests if the city table returns any rows of data */
     @Test
     void testCityTableContents() {
         try (Connection connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
@@ -38,7 +38,7 @@ public class DatabaseContentTest {
             fail("Failed to execute query: " + e.getMessage());
         }
     }
-
+/** This tests that the country table returns rows of data */
     @Test
     void testCountryLanguageTableContents() {
         try (Connection connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
