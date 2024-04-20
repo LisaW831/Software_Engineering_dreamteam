@@ -39,7 +39,7 @@ Software Engineering Coursework
 | 28 | Country Report                                                                                        |  Y  | [IMAGE ](https://github.com/LisaW831/Software_Engineering_dreamteam/issues/80#issue-2254425222)|
 | 29 | City Report                                                                                           |  Y  | [IMAGE ](https://github.com/LisaW831/Software_Engineering_dreamteam/issues/81#issue-2254425321)|
 | 30 | Capital City Report                                                                                   |  Y  | [IMAGE ](https://github.com/LisaW831/Software_Engineering_dreamteam/issues/82#issue-2254426152)|
-| 31 | Population Report                                                                                     |  Y  | IMAGE |
+| 31 | Population Report                                                                                     |  Y  | [IMAGE ](https://github.com/LisaW831/Software_Engineering_dreamteam/issues/87#issue-2254552861)|
 
 
 
