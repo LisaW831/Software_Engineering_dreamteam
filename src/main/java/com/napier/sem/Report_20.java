@@ -3,6 +3,7 @@ package com.napier.sem;
 import java.sql.*;
 import java.util.Scanner;
 
+// Class defined to create the report to query: The top N populated capital cities in the world where N is provided by the user.
 public class Report_20 {
     static Connection con = null;
 
