@@ -5,7 +5,7 @@ Software Engineering Coursework
 [![LICENSE](https://img.shields.io/github/license/LisaW831/sem.svg?style=flat-square)](https://github.com/LisaW831/sem/blob/master/LICENSE)
 [![Releases](https://img.shields.io/github/release/LisaW831/sem/all.svg?style=flat-square)](https://github.com/LisaW831/sem/releases)
 
-32 requirements of 32 have been implemented, which is 100%.
+31 requirements of 31 have been implemented, which is 100%.
 
 | ID | Name                                                                                                  | Met | IMAGE |
 |----|-------------------------------------------------------------------------------------------------------|-----|-------|
