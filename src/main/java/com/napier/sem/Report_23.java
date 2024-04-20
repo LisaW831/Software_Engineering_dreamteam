@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
 
+// Class defined to create the report to query: The population of people, people living in cities, and people not living in cities in each continent.
 public class Report_23 {
     static Connection con = null;
 
