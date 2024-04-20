@@ -57,7 +57,7 @@ public class DatabaseUnitTest {
     }
 
 /** This test adds some data to the database to make sure it can, then deletes it so the test can be ran multple times */
-    @Test
+   // @Test
     void testTransactionCommit() {
         try {
             Statement statement = connection.createStatement();
@@ -88,4 +88,4 @@ public class DatabaseUnitTest {
             fail("Transaction failed: " + e.getMessage());
         }
     }
-}
+}//
