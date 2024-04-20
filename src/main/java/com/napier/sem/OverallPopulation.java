@@ -3,6 +3,7 @@ package com.napier.sem;
 import java.sql.*;
 import java.util.Scanner;
 
+// Class defined to create the report to query: The population of the world, The population of a continent, The population of a region, The population of a country, The population of a district, The population of a city.
 public class OverallPopulation {
     static Connection con = null;
 
