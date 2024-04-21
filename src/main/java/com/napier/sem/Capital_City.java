@@ -2,6 +2,7 @@ package com.napier.sem;
 
 import java.sql.*;
 
+/** Class defined to create the report to query: A capital city report that contains the following columns: Name, Country, Population. */
 public class Capital_City {
     static Connection con = null;
 

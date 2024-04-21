@@ -2,6 +2,7 @@ package com.napier.sem;
 
 import java.sql.*;
 
+/** Class defined to create the report to query: A city report requires the following columns: Name, Country, District, Population. */
 public class City {
     static Connection con = null;
 

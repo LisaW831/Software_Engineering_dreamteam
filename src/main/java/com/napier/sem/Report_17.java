@@ -2,9 +2,11 @@ package com.napier.sem;
 
 import java.sql.*;
 
+/** Class defined to create the report to query: All the capital cities in the world organised by largest population to smallest. */
 public class Report_17 {
     static Connection con = null;
 
+    /** This report retrieves the capitals by population */
     public static void main(String[] args) {
         App a = new App();
         System.out.println("going in to connect"); // Indicates the start of the connection process

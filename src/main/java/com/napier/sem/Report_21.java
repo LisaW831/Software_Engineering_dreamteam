@@ -3,6 +3,7 @@ package com.napier.sem;
 import java.sql.*;
 import java.util.Scanner;
 
+/** Class defined to create the report to query: The top N populated capital cities in a continent where N is provided by the user. it has a wait for user input*/
 public class Report_21 {
     static Connection con = null;
 
@@ -26,6 +27,13 @@ public class Report_21 {
         System.out.println("Enter the number of top populated cities you want to retrieve:");
         int topN = scanner.nextInt(); // Get user input for the value of N
         scanner.nextLine(); // Consume the newline character
+
+        // Wait for 10 seconds after prompting for user input
+        try {
+            Thread.sleep(10000); // 10 seconds in milliseconds
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         // Call method to display top N populated capital cities in the chosen continent
         displayTopPopulatedCapitalCities(con, chosenContinent, topN);
