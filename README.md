@@ -2,8 +2,10 @@
 Software Engineering Coursework
 
 ![workflow](https://github.com/LisaW831/Software_Engineering_dreamteam/actions/workflows/main.yml/badge.svg)
-[![LICENSE](https://img.shields.io/github/license/LisaW831/sem.svg?style=flat-square)](https://github.com/LisaW831/sem/blob/master/LICENSE)
-[![Releases](https://img.shields.io/github/release/LisaW831/sem/all.svg?style=flat-square)](https://github.com/LisaW831/sem/releases)
+![GitHub License](https://img.shields.io/github/license/LisaW831/Software_Engineering_dreamteam)
+![GitHub Release](https://img.shields.io/github/v/release/LisaW831/Software_Engineering_dreamteam)
+
+
 
 31 requirements of 31 have been implemented, which is 100%.
 
