@@ -3,7 +3,7 @@ package com.napier.sem;
 import java.sql.*;
 import java.util.Scanner;
 
-/** Class defined to create the report to query: The top N populated countries in the world where N is provided by the user*/
+/** Class defined to create the report to query: The top N populated countries in the world where N is provided by the user */
 public class Report_4 {
     static Connection con = null;
 
