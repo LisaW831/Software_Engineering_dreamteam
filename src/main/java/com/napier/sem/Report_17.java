@@ -5,6 +5,7 @@ import java.sql.*;
 public class Report_17 {
     static Connection con = null;
 
+    /** This report retrieves the capitals by population */
     public static void main(String[] args) {
         App a = new App();
         System.out.println("going in to connect"); // Indicates the start of the connection process

@@ -3,7 +3,7 @@ package com.napier.sem;
 import java.sql.*;
 import java.util.Scanner;
 
-// Class defined to create the report to query: All the countries in a region organised by largest population to smallest
+/** Class defined to create the report to query: All the countries in a region organised by largest population to smallest */
 public class Report_3 {
     static Connection con = null;
 
